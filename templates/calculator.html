@@ -1,0 +1,29 @@
+<html>
+    <body>
+        <input type="text" id="t1" placeholder="enter 1st no" />
+        <input type="text" id="t2" placeholder="enter 2nd no" />
+        <button onclick="f(this.innerHTML)">add</button>
+        <button onclick="f(this.innerHTML)">sub</button>
+        <button onclick="f(this.innerHTML)">mul</button>
+        <button onclick="f(this.innerHTML)">div</button>
+        <p id="result"></p>
+    </body>
+    <script>
+        function f(x){
+            let n1=document.getElementById("t1").value;
+            let n2=document.getElementById("t2").value;
+            let n3;
+            if(x=="add")
+              n3=Number(n1)+Number(n2);
+            else if(x=="sub")
+              n3=n1-n2;
+            else if(x=="mul")
+              n3=n1*n2;
+            else if(x=="div")
+              n3=n1/n2;
+            else
+              alert("invalid input");
+              document.getElementById("result").innerHTML+=x +" of "+n1+" and "+ n2+ " is "+n3+ "<br>";
+        }
+    </script>
+</html>

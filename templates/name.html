@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="row " id="bg">
+    <div class="col-md-12 text-danger  p-5 ms-3">
+        <a href="/index" class="text-decoration-none ">
+            <h5 class="text-light ms-3 p-2 mt-3">Home/Property Contacts</h5>
+        </a>
+        <h1 class="ms-3  fw-bold">Customer Contacts</h1>
+
+    </div>
+</div>
+<div class="row p-4">
+    <div class="col-md-12 ">
+        {% for c in c %}
+        <div class="row border-bottom border-info mb-3 mt-3 p-3" >
+            <div class="col-md-6">
+                <section>  
+                    <h5 class="fs-3 ">{{ c.propertyid.title }}, <span class="ms-2 text-secondary"></span>{{ c.propertyid.location }}</span></h5>
+            
+                            <div class="d-flex justify-content-around mt-5">
+                                <h4>{{ c.propertyid.property_type }}<span class="ms-2 text-secondary"><br>property type</span></h4>
+                                <h4><span>&#8377</span>{{ c.propertyid.property_price }}<span class="ms-2 text-secondary"><br>price</span></h4>
+                                 
+                            </div>
+            
+                            <div class="row my-5">
+                                <div class="col-md-3">
+                                    <span class="text-secondary  fw-bold ">{{ c.propertyid.area_sqft }}</span>
+                                    <i class="fa-regular fa-square fa-3x"></i>
+                                    <h4 class="text-secondary   fw-bold ">Secure Ft</h4>
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="text-secondary  fw-bold ">{{ c.propertyid.no_of_rooms }}</span>
+                                    <i class="fa-solid fa-bed fa-3x"></i>
+                                    <h4 class="text-secondary   fw-bold ">Bedroom</h4>
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="text-secondary  fw-bold ">{{ c.propertyid.no_of_bathrooms }}</span>
+                                    <i class="fa fa-bath fa-3x"></i>
+                                    <h4 class="text-secondary  fw-bold ">Bathroom</h4>
+                                </div>
+                                <div class="col-md-3">  
+                                    <span class="text-secondary  fw-bold ">{{ c.propertyid.parking }}</span>
+                                    <i class="fa-solid fa-car fa-3x"></i>
+                                    <h4 class="text-secondary   fw-bold ">Car Parking</h4>
+                                </div>
+            
+                                <div id="box2" class="p-3"> 
+                                <h4 >Description</h4>
+                                <p >{{ c.propertyid.description|safe }}</p>
+                            </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="col-md-12 border border-dark p-5">
+                                <h4 class="text-decoration-underline">Seller Details</h4>
+                                <h5 class=" text-danger">{{c.propertyid.contact_person }}</h5>
+                                <h5 class=" "> {{ c.propertyid.contact_no }}</h5>
+                                
+                                </div>
+                                <div class="col-md-12 border border-dark p-5">
+                                    <h4 class="text-decoration-underline">Customer Message</h4>
+                                    <h5 class=" text-danger">{{c.name }}</h5>
+                                    <h5 class=" ">{{c.email }}, {{ c.phone_no }}</h5>
+                                    <p>{{ c.message }}</p>
+                                    
+                                    </div>
+                     
+                            
+                              
+                               
+                            
+                        </div>
+                        </div>
+       <!----<div class="col-md-6">
+            <div class="col-md-12 border border-dark p-5">
+                <h4 class="text-decoration-underline">Customer Message</h4>
+                <h5 class=" text-danger">{{c.name }}</h5>
+                <h5 class=" ">{{c.email }}, {{ c.phone_no }}</h5>
+                <p>{{ c.message }}</p>
+                
+                </div>
+     
+            
+              
+               
+            
+        </div>
+        </div>-->
+{% endfor %}  
+
+</div>
+</div>
+{% endblock body%} 
